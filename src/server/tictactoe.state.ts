@@ -1,10 +1,10 @@
 
-import { ServerState, syncto } from 'rivercut';
+import { ServerState, sync } from 'rivercut';
 import { Board } from '../models/Board';
 
 export class TicTacToeState extends ServerState {
 
-  @syncto() public board: Board = new Board();
+  @sync(Board) public board: Board = new Board();
 
   onInit() {
     if(!this.board.initialized) {
