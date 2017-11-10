@@ -1,0 +1,30 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Tic Tac Toe built w/ Rivercut",
+  "scripts": {
+    "start": "npm-run-all --parallel start:*",
+    "start:client": "http-server ./src",
+    "start:server": "nodemon --exec \"ts-node \" -- \"src/server/index.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiverCut/tic-tac-toe.git"
+  },
+  "author": "Kyle Kemp <kyle@seiyria.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/RiverCut/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/RiverCut/tic-tac-toe#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.50",
+    "dotenv": "^4.0.0",
+    "http-server": "^0.10.0",
+    "nodemon": "^1.12.1",
+    "npm-run-all": "^4.1.2",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.6.1"
+  },
+  "private": true
+}
