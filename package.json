@@ -4,7 +4,7 @@
   "description": "Tic Tac Toe built w/ Rivercut",
   "scripts": {
     "start": "npm-run-all --parallel start:*",
-    "start:client": "http-server ./src",
+    "start:client": "webpack-dev-server --open",
     "start:server": "nodemon --exec \"ts-node \" -- \"src/server/index.ts\""
   },
   "repository": {
@@ -17,14 +17,19 @@
     "url": "https://github.com/RiverCut/tic-tac-toe/issues"
   },
   "homepage": "https://github.com/RiverCut/tic-tac-toe#readme",
+  "dependencies": {
+    "rivercut": "^0.0.1"
+  },
   "devDependencies": {
     "@types/node": "^8.0.50",
     "dotenv": "^4.0.0",
-    "http-server": "^0.10.0",
+    "dotenv-webpack": "^1.5.4",
     "nodemon": "^1.12.1",
     "npm-run-all": "^4.1.2",
     "ts-node": "^3.3.0",
-    "typescript": "^2.6.1"
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   },
   "private": true
 }
