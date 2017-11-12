@@ -18,3 +18,6 @@ server.login({ token: process.env.DEEPSTREAM_TOKEN })
   .catch(err => {
     console.error(err);
   });
+
+process.on('unhandledRejection', (e) => console.error(e));
+process.on('uncaughtException', (e) => console.error(e));
