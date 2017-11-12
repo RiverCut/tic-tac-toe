@@ -11,7 +11,10 @@ server.init(process.env.DEEPSTREAM_URL, {});
 
 server.registerRoom('tictactoe', TicTacToeRoom, {});
 
-server.login({})
+server.login({ token: process.env.DEEPSTREAM_TOKEN })
   .then(() => {
-    console.log(`Logged In - TicTacToe - ${server.uid}`);
+    console.log(`Logged In - TicTacToe - Server - ${server.uid}`);
+  })
+  .catch(err => {
+    console.error(err);
   });
