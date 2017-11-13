@@ -10,12 +10,12 @@ export class TicTacToeRoom<TicTacToeState> extends Room {
 
   onConnect(clientId: string) {
     this.sendMessage(clientId, { message: 'You joined!' });
-    this.broadcast({ message: `${clientId} joined!`});
+    this.broadcast({ message: `${clientId} joined!`}, [clientId]);
   }
 
   onDisconnect(clientId: string) {
     this.sendMessage(clientId, { message: 'You left!' });
-    this.broadcast({ message: `${clientId} left!`});
+    this.broadcast({ message: `${clientId} left!`}, [clientId]);
   }
 
   onInit() {}
