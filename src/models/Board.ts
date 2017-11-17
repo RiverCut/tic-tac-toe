@@ -12,8 +12,16 @@ const BASE_CONFIG = {
 export class Board extends Model {
 
   public initialized: boolean;
+  public isStarted: boolean;
+  public isComplete: boolean;
 
   public configuration: any = cloneDeep(BASE_CONFIG);
+
+  public player1: string;
+  public player2: string;
+
+  public currentTurn: string;
+  public currentMessage: string = 'Waiting for players';
 
   public reset() {
     this.configuration = cloneDeep(BASE_CONFIG);

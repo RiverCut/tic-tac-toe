@@ -4,8 +4,10 @@
   "description": "Tic Tac Toe built w/ Rivercut",
   "scripts": {
     "start": "npm-run-all --parallel start:*",
-    "start:client": "webpack-dev-server --open",
-    "start:server": "nodemon --exec \"ts-node \" -- \"src/server/index.ts\""
+    "start:client": "webpack-dev-server --open --port=9000",
+    "start:server": "nodemon --ignore \"src/client/*\" --exec \"ts-node \" -- \"src/server/index.ts\"",
+    "start:deepstream": "deepstream start --config ./node_modules/rivercut/ds.config.yml",
+    "start:authserver": "node ./node_modules/rivercut/deepstream/auth.server.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +20,12 @@
   },
   "homepage": "https://github.com/RiverCut/tic-tac-toe#readme",
   "dependencies": {
-    "rivercut": "^0.0.1"
+    "rivercut": "^0.1.0",
+    "vue": "^2.5.3"
   },
   "devDependencies": {
     "@types/node": "^8.0.50",
+    "deepstream.io": "^3.1.1",
     "dotenv": "^4.0.0",
     "dotenv-webpack": "^1.5.4",
     "nodemon": "^1.12.1",

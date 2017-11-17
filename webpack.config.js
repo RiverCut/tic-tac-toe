@@ -19,7 +19,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
+    alias: {
+      vue: 'vue/dist/vue.esm.js'
+    }
   },
   devServer: {
     progress: false,

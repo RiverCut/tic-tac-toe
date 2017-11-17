@@ -1,6 +1,7 @@
 
 import { Client } from 'rivercut';
 
+import { init } from './view.ctrl';
 import { TicTacToeClientState } from './tictactoe.clientstate';
 
 const client = new Client();
@@ -17,9 +18,10 @@ client.login({})
   .then(data => {
     console.log('Joined tictactoe!', data);
 
-    const ticTacToeState = client.createState(TicTacToeClientState, data);
-    ticTacToeState.onUpdate$.subscribe(data => console.log('Update:', data));
+    const ticTacToeState = client.createState<TicTacToeClientState>(TicTacToeClientState, data);
+    init(client, ticTacToeState);
   })
   .catch(err => {
     console.error(err);
   });
+

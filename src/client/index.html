@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>RiverCut - Tic Tac Toe</title>
   <script src="bundle.js" type="text/javascript" charset="utf-8"></script>
+
+  <style>
+    table, td { border: 1px solid #000 }
+    v-cloak { display: none !important; }
+  </style>
 </head>
+
 <body>
 
+  <div id="app" v-cloak>
+    <div>Connection Status: {{ status }}</div>
+    <div>Me: {{ uid }}</div>
+    <div>Player 1 (x): {{ state.board.player1 }}</div>
+    <div>Player 2 (o): {{ state.board.player2 }}</div>
+    <div>Current Message: {{ state.board.message }}</div>
+
+    <br><br>
+
+    <table>
+      <tr v-for="(_, thisX) in state.board.configuration">
+        <td v-for="(value, thisY) in state.board.configuration[thisX]">
+          {{ thisX }},{{ thisY }}
+          {{ value }}
+          <br>
+          <button :disabled="value || !isMyTurn()" @click="takeTurn(thisX, thisY)">Choose</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
 </body>
+
 </html>
