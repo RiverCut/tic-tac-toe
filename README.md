@@ -17,6 +17,17 @@ Otherwise:
   * `DEEPSTREAM_TOKEN` (You need a token for the server process to be authoritative)
 * `npm start`
 
+### `.env` Notes
+
+If you're using the local deepstream and auth service, you can make this your `.env` file:
+
+```
+DEEPSTREAM_URL=ws://127.0.0.1:6020/deepstream
+DEEPSTREAM_TOKEN=MdKTi3fEg99ZeOsgRIaVJr8D9fZq0XNT
+```
+
+The token is a hardcoded auth token.
+
 ## Permissions
 
 See [the RiverCut permissions note](https://github.com/RiverCut/rivercut#permissions) to set up the correct permissions for this demo.
