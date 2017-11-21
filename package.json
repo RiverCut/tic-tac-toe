@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/RiverCut/tic-tac-toe#readme",
   "dependencies": {
-    "rivercut": "^0.1.0",
+    "rivercut": "^0.1.1",
     "vue": "^2.5.3"
   },
   "devDependencies": {

@@ -6,7 +6,6 @@ import { Server } from 'rivercut';
 import { TicTacToeRoom } from './tictactoe.room';
 
 const server = new Server({
-  roomsPerWorker: 3,
   namespace: 'tictactoegame',
   resetStatesOnReboot: true,
   serializeByRoomId: true
